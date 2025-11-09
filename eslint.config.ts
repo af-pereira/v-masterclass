@@ -11,7 +11,7 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    files: ['**/*.{ts,mts,tsx,vue}']
   },
 
   globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
@@ -19,7 +19,7 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/essential'],
   {
     rules: {
-      "vue/multi-word-component-names": "off",
+      'vue/multi-word-component-names': 'off'
     }
   },
   vueTsConfigs.recommended,
