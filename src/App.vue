@@ -1,42 +1,14 @@
 <script setup lang="ts">
-import Input from '@/components/ui/input/Input.vue'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import TopNavbar from '@components/Layout/TopNavbar.vue'
+import Sidebar from '@components/Layout/Sidebar.vue'
 </script>
 
 <template>
-  <nav class="h-16 border-b bg-muted/40 flex justify-between px-6 items-center">
-    <form class="relative w-full h-fit max-w-96">
-      <iconify-icon
-        class="absolute top-[50%] translate-y-[-50%] left-2.5 text-muted-foreground"
-        icon="lucide:search"
-      ></iconify-icon>
-      <Input class="w-full pl-8 bg-background" type="text" placeholder="Search..." />
-    </form>
-    <DropdownMenu>
-      <DropdownMenuTrigger>
-        <Avatar>
-          <AvatarFallback>AP</AvatarFallback>
-        </Avatar>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuLabel>Account</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Settings</DropdownMenuItem>
-        <DropdownMenuItem>Logout</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  </nav>
-
-  <main>
-    <RouterView />
-  </main>
+  <Sidebar />
+  <div class="flex flex-col lg:ml-52 ml-16 transition-[margin]">
+    <TopNavbar />
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
