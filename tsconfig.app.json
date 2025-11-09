@@ -11,7 +11,8 @@
       "@views/*": ["./src/views/*"],
       "@stores/*": ["./src/stores/*"],
       "@router/*": ["./src/router/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   }
 }
