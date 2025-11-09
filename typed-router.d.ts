@@ -58,6 +58,13 @@ declare module 'vue-router/auto-routes' {
       { id: ParamValue<false> },
       | never
     >,
+    '/projects/tasks/': RouteRecordInfo<
+      '/projects/tasks/',
+      '/projects/tasks',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -98,6 +105,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/projects/[id].vue': {
       routes:
         | '/projects/[id]'
+      views:
+        | never
+    }
+    'src/pages/projects/tasks/index.vue': {
+      routes:
+        | '/projects/tasks/'
       views:
         | never
     }
