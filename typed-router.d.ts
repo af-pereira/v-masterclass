@@ -58,9 +58,9 @@ declare module 'vue-router/auto-routes' {
       { id: ParamValue<false> },
       | never
     >,
-    '/projects/tasks/': RouteRecordInfo<
-      '/projects/tasks/',
-      '/projects/tasks',
+    '/tasks/': RouteRecordInfo<
+      '/tasks/',
+      '/tasks',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -108,9 +108,9 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/projects/tasks/index.vue': {
+    'src/pages/tasks/index.vue': {
       routes:
-        | '/projects/tasks/'
+        | '/tasks/'
       views:
         | never
     }
