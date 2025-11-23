@@ -55,6 +55,7 @@
     "prettier": "3.6.2",
     "supabase": "^2.54.11",
     "typescript": "~5.9.0",
+    "unplugin-auto-import": "^20.2.0",
     "unplugin-vue-router": "^0.16.1",
     "vite": "^7.1.11",
     "vite-plugin-vue-devtools": "^8.0.3",

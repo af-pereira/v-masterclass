@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
 interface LinkProp {
   title: string
   icon: string

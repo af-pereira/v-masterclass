@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { supabase } from '@lib/supabaseClient'
-import { h, ref } from 'vue'
 import DataTable from '@/components/ui/data-table/DataTable.vue'
 import { RouterLink } from 'vue-router'
 import type { Tables } from '../../../database/types'

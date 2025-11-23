@@ -5,6 +5,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import VueRouter from 'unplugin-vue-router/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,7 +19,21 @@ export default defineConfig({
       }
     }),
     tailwindcss(),
-    vueDevTools()
+    vueDevTools(),
+    AutoImport({
+      // targets to transform
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.vue\.[tj]sx?\?vue/, // .vue (vue-loader with experimentalInlineMatchResource enabled)
+        /\.md$/ // .md
+      ],
+      imports: ['vue', 'vue-router'],
+      // Filepath to generate corresponding .d.ts file.
+      dts: true,
+      viteOptimizeDeps: true
+    })
   ],
   resolve: {
     alias: {
