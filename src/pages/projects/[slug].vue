@@ -88,7 +88,7 @@ await getProject()
       <h2>Documents</h2>
       <div class="table-container">
         <p class="text-muted-foreground text-sm font-semibold px-4 py-3">
-          This project doemsn't have documents yet...
+          This project doesn't have documents yet...
         </p>
       </div>
     </div>
