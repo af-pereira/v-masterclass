@@ -25,9 +25,15 @@ export const useErrorStore = defineStore('error-store', () => {
     ;(activeError.value as ExtendedPostgrestError).statusCode = customCode || 500
   }
 
+  const clearError = () => {
+    activeError.value = null
+    isCustomError.value = false
+  }
+
   return {
     activeError,
     setError,
+    clearError,
     isCustomError
   }
 })
