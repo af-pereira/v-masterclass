@@ -46,6 +46,7 @@ export type Database = {
       }
       tasks: {
         Row: {
+          assignee: string | null
           collaborators: string[]
           created_at: string
           description: string
@@ -56,6 +57,7 @@ export type Database = {
           status: Database["public"]["Enums"]["current_status"]
         }
         Insert: {
+          assignee?: string | null
           collaborators?: string[]
           created_at?: string
           description: string
@@ -66,6 +68,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["current_status"]
         }
         Update: {
+          assignee?: string | null
           collaborators?: string[]
           created_at?: string
           description?: string
