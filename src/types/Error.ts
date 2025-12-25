@@ -5,5 +5,5 @@ export interface CustomError extends Error {
 }
 
 export interface ExtendedPostgrestError extends PostgrestError {
-  customCode?: number
+  statusCode?: number
 }

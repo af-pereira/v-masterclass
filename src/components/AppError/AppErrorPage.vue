@@ -20,7 +20,7 @@ if (error.value && 'code' in error.value) {
   code.value = error.value.code
   hint.value = error.value.hint
   details.value = error.value.details
-  statusCode.value = error.value.customCode ?? 0
+  statusCode.value = error.value.statusCode ?? 0
 }
 
 router.afterEach(() => {
