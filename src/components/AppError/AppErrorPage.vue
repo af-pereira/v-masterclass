@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import AppErrorDevSection from './AppErrorDevSection.vue'
+import AppErrorDevSection from '@/components/AppError/AppErrorDevSection.vue'
+import AppErrorProdSection from '@/components/AppError/AppErrorProdSection.vue'
 
 const router = useRouter()
 
@@ -33,6 +34,12 @@ router.afterEach(() => {
 <template>
   <section class="error">
     <AppErrorDevSection :message :hint :customCode :statusCode :details :code />
+    <AppErrorProdSection
+      :message
+      :customCode
+      :statusCode
+      :isCustomError="errorStore.isCustomError"
+    />
   </section>
 </template>
 
