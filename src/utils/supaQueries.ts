@@ -8,7 +8,7 @@ export const tasksWithProjectQuery = supabase.from('tasks').select(`
       id,
       slug,
       name
-    )
+    ),
   `)
 
 export const taskWithProjectQuery = (id: number) =>

@@ -2,24 +2,41 @@
 const router = useRouter()
 
 const errorStore = useErrorStore()
+const error = ref(errorStore.activeError)
+
+const customCode = ref(0)
+const message = ref('')
+const statusCode = ref(0)
+const hint = ref('')
+const details = ref('')
+const code = ref('')
+
+if (error.value && !('code' in error.value)) {
+  message.value = error.value.message
+  customCode.value = error.value.customCode ?? 0
+}
+
+if (error.value && 'code' in error.value) {
+  code.value = error.value.code
+  hint.value = error.value.hint
+  details.value = error.value.details
+  statusCode.value = error.value.customCode ?? 0
+}
 
 router.afterEach(() => {
   errorStore.activeError = null
 })
-
-const customCode = ref(0)
-const message = ref('')
-
-message.value = errorStore.activeError?.message ?? ''
-customCode.value = errorStore.activeError?.customCode ?? 0
 </script>
 
 <template>
   <section class="error">
     <div>
       <iconify-icon icon="lucide:triangle-alert" class="error__icon" />
-      <h1 class="error__code">{{ customCode }}</h1>
+      <h1 class="error__code">{{ customCode || code }}</h1>
+      <h1 v-if="statusCode" class="error__code">{{ statusCode }}</h1>
       <p class="error__msg">{{ message }}</p>
+      <p v-if="hint" class="error__msg">{{ hint }}</p>
+      <p v-if="details" class="error__msg">{{ details }}</p>
       <div class="error-footer">
         <p class="error-footer__text">You'll find lots to explore on the home page.</p>
         <RouterLink to="/">
