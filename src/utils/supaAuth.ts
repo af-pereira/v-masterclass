@@ -2,13 +2,17 @@ import { supabase } from '@/lib/supabaseClient'
 import type { LoginForm, RegisterForm } from '@/types/AuthForm'
 import type { PostgrestError, AuthError } from '@supabase/supabase-js'
 
+const authStore = useAuthStore()
+
 export const login = async (formData: LoginForm): Promise<AuthError | boolean> => {
-  const { error } = await supabase.auth.signInWithPassword({
+  const { data, error } = await supabase.auth.signInWithPassword({
     email: formData.email,
     password: formData.password
   })
 
   if (error) return error
+
+  await authStore.setAuth(data.session)
 
   return true
 }
@@ -32,6 +36,8 @@ export const register = async (
 
     if (error) return error
   }
+
+  await authStore.setAuth(data.session)
 
   return true
 }
