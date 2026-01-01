@@ -20,19 +20,20 @@
     "db:migrate:new": "supabase migration new",
     "db:reset": "supabase db reset --linked",
     "db:seed": "node --env-file=.env database/seed.js",
-    "supabase:types": "npx supabase gen types typescript --project-id fwqijfzjhgtzouhxvamr --schema public > database/types.ts"
+    "supabase:types": "npx supabase gen types typescript --project-id fwqijfzjhgtzouhxvamr --schema public > database/types.ts",
+    "shadcn:component:new": "npx shadcn-vue@latest add"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.80.0",
     "@tailwindcss/vite": "^4.1.17",
     "@tanstack/vue-table": "^8.21.3",
-    "@vueuse/core": "^14.0.0",
+    "@vueuse/core": "^14.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "iconify-icon": "^3.0.2",
     "lucide-vue-next": "^0.553.0",
     "pinia": "^3.0.3",
-    "reka-ui": "^2.6.0",
+    "reka-ui": "^2.7.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.17",
     "tailwindcss-animate": "^1.0.7",
