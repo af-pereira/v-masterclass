@@ -27,7 +27,7 @@ const signup = async () => {
       full_name: `${formData.value.firstName} ${formData.value.lastName}`
     })
 
-    if (error) return console.error
+    if (error) return console.error('Profiles: ', error)
 
     router.push('/')
   }
