@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { supabase } from '@/lib/supabaseClient'
+import { login } from '@/utils/supaAuth'
+import type { LoginForm } from '@/types/AuthForm'
 
-const formData = ref({
+const formData = ref<LoginForm>({
   email: '',
   password: ''
 })
@@ -9,14 +10,9 @@ const formData = ref({
 const router = useRouter()
 
 const signin = async () => {
-  const { error } = await supabase.auth.signInWithPassword({
-    email: formData.value.email,
-    password: formData.value.password
-  })
+  const isSignedIn = await login(formData.value)
 
-  if (error) return console.error(error)
-
-  router.push('/')
+  if (isSignedIn) router.push('/')
 }
 </script>
 
