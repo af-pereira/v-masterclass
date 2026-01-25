@@ -17,6 +17,16 @@ export const login = async (formData: LoginForm): Promise<AuthError | boolean> =
   return true
 }
 
+export const signOut = async (): Promise<AuthError | boolean> => {
+  const { error } = await supabase.auth.signOut()
+
+  if (error) return error
+
+  await authStore.setAuth()
+
+  return true
+}
+
 export const register = async (
   formData: RegisterForm
 ): Promise<AuthError | PostgrestError | boolean> => {
